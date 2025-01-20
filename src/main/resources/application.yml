@@ -1,0 +1,49 @@
+spring:
+  application:
+    name: qwikpay
+
+  # H2 Database Configuration
+  datasource:
+    url: jdbc:h2:mem:qwikpaydb;
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+   # platform: h2
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  # Config Server - Disable if not used
+  cloud:
+    config:
+      enabled: false
+
+# JWT Configuration
+jwtSecret: BLUEYONDERBELLANDURBENGALURUBLUEYONDERBELLANDURBENGALURUBLUEYONDERBELLANDURBENGALURUBENGALURUBLUEYONDERBELLANDURBENGALURUBENGALURUBLUEYONDERBELLANDURBENGALURU
+jwtExpirationMs: 86400000
+
+# Logging Configuration
+logging:
+  level:
+    org.springframework.security: DEBUG
+   # com.training.basicspringsecuritydemousingdb.security: DEBUG
+    org.springframework.web.filter: DEBUG
+
+# MySQL Configuration (Commented out for now)
+# datasource:
+#   url: jdbc:mysql://localhost:3306/qwikpaydb15?createDatabaseIfNotExist=true
+#   username: root
+#   password: root
+
+# jpa:
+#   properties:
+#     hibernate:
+#       dialect: org.hibernate.dialect.MySQLDialect
+#   hibernate:
+#     ddl-auto: update
+#   show-sql: true

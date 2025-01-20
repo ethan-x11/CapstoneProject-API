@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: qwikpay
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/qwikpaydb?createDatabaseIfNotExist=true
+    username: root
+    password: root
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+# Config Server - Disable if not used
+  cloud:
+    config:
+      enabled: false
+
+# JWT Configuration
+jwtSecret: BLUEYONDERBELLANDURBENGALURUBLUEYONDERBELLANDURBENGALURUBLUEYONDERBELLANDURBENGALURUBENGALURUBLUEYONDERBELLANDURBENGALURUBENGALURUBLUEYONDERBELLANDURBENGALURU
+jwtExpirationMs: 86400000
+
+# Logging Configuration
+logging:
+  level:
+    org.springframework.security: DEBUG
+    com.training.basicspringsecuritydemousingdb.security: DEBUG
+    org.springframework.web.filter: DEBUG
